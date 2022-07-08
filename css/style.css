@@ -1,0 +1,299 @@
+:root{
+    --azul:#2583c5;
+    --gris:#343434;
+    --gris-claro:#757575;
+}
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
+*{
+    padding:0;
+    margin:0;
+    box-sizing:border-box;
+}
+img{
+    vertical-align:middle;
+    width:100%;
+}
+body{
+    background:url("../img/fondo1.jpg")no-repeat;
+    background-size:cover;
+    height:100vh;
+    font-family:lato,sans-serif;
+    font-size:1rem;
+    display:grid;
+    place-items:center;
+}
+/* Bloque Contenedor */
+header{
+width:100%;
+background:rgba(225,225,225,0.7);
+position: absolute;
+padding:1rem;
+list-style:none;
+display:flex;
+justify-content:flex-end;
+position:fixed;
+top:0;
+z-index:3;
+}
+.card{
+    position: relative;
+}
+/* Elementos card uno */
+.nav__list{
+    position: absolute;
+    left:-100%;
+    width:80%;
+    transform:translateY(2.1rem);
+    background:rgba(0,0,0,0.6);
+    backdrop-filter: blur(5px);
+    list-style:none;
+    z-index:3;
+    transition:all 0.5s ease;
+}
+
+.nav__list-li{
+    padding:0.5rem;
+    color:#fff;
+    cursor: pointer;
+    transition:all 0.5s ease;
+}
+.nav__list-li:hover{
+    background:var(--azul);
+}
+.nav__list-li.activo{
+    background:var(--azul);
+}
+.nav__icon{
+    list-style:none;
+    cursor: pointer;
+}
+.card__uno{
+    background:#fff;
+    gap:1rem;
+    border-radius:0.4rem;
+}
+.card__uno-gif{
+    position: absolute;
+    width:5rem;
+    top:0;
+    right:10rem;
+}
+
+.card__gif{
+    transition:all 1s ease;
+}
+.card__uno-img{
+    opacity:0.1;
+}
+.card__cantante{
+    color:var(--gris);
+}
+.card__titulo{
+    color:var(--gris-claro);
+}
+.card__barra{
+    width:100%;
+    height:0.5rem;
+    background:#ddd;
+}
+.barra{
+    height:inherit;
+    background:var(--azul);
+}
+.card__btn{
+    display:flex;
+    gap:1.5rem;
+}
+.btn{
+    outline:0;
+    color:var(--gris-claro);
+    border:none;
+    background:none;
+    font-size:1.2rem;
+    cursor: pointer;
+    transition:all 0.3s ease;
+}
+.btn:hover{
+    color:var(--azul);
+}
+.btn__play{
+    font-size:1.6rem;
+}
+.card__tiempo{
+    color:var(--gris);
+    width:100%;
+}
+
+/* Elementos card dos */
+.card__dos{
+    background-color:#fff;
+    z-index:-1;
+    border-radius:50%;
+    transition:all 0.3s ease;
+}
+.card__dos-img{
+    padding:1rem;
+    border-radius:inherit;
+}
+/* Modificadores lista de música */
+.nav__list--right{
+    left:0;
+}
+/* Modificadores generales*/
+.card--width{
+    --wh:25rem;
+    width:var(--wh);
+    height:var(--wh);
+    border:1px solid #ddd;
+    padding:1rem;
+}
+.text--center{
+    text-align:center;
+}
+.card--img-objet-fit{    
+    position: absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    object-fit:cover;
+    height:100%;    
+}
+/* Modificadores card uno*/
+.card--between{
+    display:flex;
+    justify-content:space-between;    
+}
+.z--index{
+    z-index:1;
+}
+.card--center{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+}
+.card--shadow{
+    box-shadow:2px 0px 4px 0px var(--gris);
+}
+/* Modificadores card dos*/
+.card--translate{
+    position:absolute;
+    top:0;
+    left:0;    
+}
+.card--left{
+    left:10rem;
+}
+.card--rotar{
+    animation:rotar 2s linear infinite;
+}
+@keyframes rotar{
+    0%{
+        transform:rotate(0deg);
+    }
+    100%{
+        transform:rotate(360deg);
+    }
+}
+@media screen and (max-width:775px){
+    body{
+        background:url("../img/fondo0.jpg")no-repeat;
+        background-size:cover;
+        height:100vh;
+        font-family:lato,sans-serif;
+        font-size:1rem;
+        display:grid;
+        place-items:center;
+    }
+    .card{
+        width:90%;
+    }
+    .card__uno-gif{
+        top:-1rem;
+        right:1rem;
+    }
+   
+    .card__uno{
+        background:#fff;
+        gap:1rem;
+        width:100%;
+        height:13rem;
+    }
+    .card__dos{
+        --wh:8rem;
+        width:var(--wh);
+        height:var(--wh);
+        background-color:#fff;
+        z-index:1;
+        margin:auto;
+        box-shadow:0px 0px 5px 1px var(--gris);
+    }
+    .card--translate{
+        position:absolute;
+        top:-14rem;
+        right:0;
+        bottom:0;
+        left:-25rem; 
+    }
+    .card__dos-img{
+        padding:0.3rem;
+    }
+    .card--shadow{
+        box-shadow:0px 0px 4px 1px var(--gris);
+    }
+}
+@media screen and (max-width:520px){
+    body{
+        background:url("../img/fondo2.jpg")no-repeat;
+        background-size:cover;
+        height:100vh;
+        font-family:lato,sans-serif;
+        font-size:1rem;
+        display:grid;
+        place-items:center;
+    }
+    .card__uno{
+        background:#fff;
+        gap:1rem;
+        height:12rem;
+    }
+    .card__dos{
+        --wh:20rem;
+        width:var(--wh);
+        height:var(--wh);
+        background-color:#fff;
+        z-index:-1;
+        margin:auto;
+        box-shadow:0px 0px 5px 1px #343434;
+    }
+    .card--translate{
+        position:absolute;
+        top:-10em;
+        right:0;
+        bottom:0;
+        left:0; 
+    }
+    .card--shadow{
+        box-shadow:0px -1px 5px -1px var(--gris);
+    }
+    .card__dos-img{
+        padding:0.1rem;
+    }
+}
+@media screen and (max-width:400px){
+    .card__dos{
+        top:2rem;
+        --wh:10rem;
+        width:var(--wh);
+        height:var(--wh);
+        background-color:#fff;
+        z-index:-1;
+        /* opacity:0.050; */
+        margin:auto;
+        box-shadow:0px 0px 5px 1px #343434;
+    }
+    .card--left{
+        top:-10rem;
+    }
+}
