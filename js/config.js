@@ -82,6 +82,7 @@ function prev() {
     if (n < 0) {
         n = music.length - 1;
     }
+    cambiarColorDeBotonesDelMenu(n)
     load_song(n);
     reproducir()
 }
@@ -99,6 +100,7 @@ function next() {
     if (n > music.length - 1) {
         n = 0;
     }
+    cambiarColorDeBotonesDelMenu(n)
     load_song(n);
     reproducir();
 }
@@ -155,4 +157,9 @@ let widthX=this.clientWidth,
 clickX=e.offsetX,
 duration=$audio.duration;
 $audio.currentTime=(clickX/widthX)*duration;
+}
+
+function cambiarColorDeBotonesDelMenu(n){
+    d.querySelector(".nav__list-li.activo").classList.remove("activo")
+    d.querySelectorAll(".nav__list-li")[n].classList.add("activo")
 }
